@@ -1,0 +1,113 @@
+@import './styles/section.css';
+@import './styles/modal.css';
+@import './styles/form.css';
+@import './styles/reset.css';
+@import './styles/container.css';
+@import './styles/fonts.css';
+
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --second-family: 'Gotham Pro', sans-serif;
+  --green: #0f7c41;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#registration-form,
+#modal-registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  width: 100%;
+  text-align: left;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#timer {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .form-container {
+    display: block;
+  }
+
+  #register-button {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}

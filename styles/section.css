@@ -1,0 +1,121 @@
+.registration-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #f2f2f2;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/BG@1x_desk.png');
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('../img/BG@2x_desk.png');
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    background-image: url('../img/BG@1x_tablet.png');
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+    (min-width: 768px) and (max-width: 1024px) and (min-resolution: 192dpi) {
+    background-image: url('../img/BG@2x_tablet.png');
+  }
+  @media (max-width: 767px) {
+    background-image: url('../img/BG@1x_mobile.png');
+  }
+  @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
+    (max-width: 767px) and (min-resolution: 192dpi) {
+    background-image: url('../img/BG@2x_mobile.png');
+  }
+}
+
+.logo-main {
+  margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 22px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 40px;
+  }
+}
+
+.section-wrap {
+  display: flex;
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 104px;
+  }
+}
+
+.hero-container {
+  flex: 1;
+}
+
+.custom-border {
+  position: relative;
+
+  display: inline-block;
+  border: 0.4px solid var(--green);
+  padding: 8px 16px;
+  color: var(--green);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-align: center;
+  ::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--green);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--green);
+  }
+  ::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--green);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--green);
+  }
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+    gap: 14px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 40px;
+    flex-direction: row;
+    gap: 30px;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Навчіться створювати Excel-таблиці на pro-рівні</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="registration-section">
+      <div class="container">
+        <svg class="logo-main" width="100" height="30">
+          <use href="./img/sprite.svg#logo"></use>
+        </svg>
+
+        <div class="section-wrap">
+          <div class="hero-container">
+            <div class="tags-wrapper">
+              <div class="custom-border"><p>Безоплатний вебінар</p></div>
+              <div class="custom-border">
+                <p>Старт: <b>10 січня 19:30</b></p>
+              </div>
+            </div>
+            <h1>Навчіться створювати Excel-таблиці на pro-рівні</h1>
+            <p>
+              Опануйте функціонал Microsoft Excel, автоматизуйте свою роботу та
+              створюйте таблиці швидко і в задоволення
+            </p>
+          </div>
+          <div class="form-container">
+            <h1>Реєструйся просто зараз</h1>
+            <div id="timer"></div>
+            <form id="registration-form">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Введи своє ім`я"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Введи свій E-mail"
+                required
+              />
+              <input type="tel" id="phone" name="phone" required />
+              <label>
+                <input type="checkbox" id="agreement" required />
+                Згоден з <a href="#">Політика конфіденційності</a> та
+                <a href="#">Умови користування послугами</a>
+              </label>
+              <button type="submit">Зареєструватися</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button id="register-button" class="mobile-only">Зареєструватися</button>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="modal-registration-form">
+          <label for="modal-name">Ім’я:</label>
+          <input type="text" id="modal-name" name="name" required />
+
+          <label for="modal-email">E-mail:</label>
+          <input type="email" id="modal-email" name="email" required />
+
+          <label for="modal-phone">Номер телефону:</label>
+          <input type="tel" id="modal-phone" name="phone" required />
+
+          <label>
+            <input type="checkbox" id="modal-agreement" required />
+            Згоден з <a href="#">Політика конфіденційності</a> та
+            <a href="#">Умови користування послугами</a>
+          </label>
+
+          <button type="submit">Зареєструватися</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
