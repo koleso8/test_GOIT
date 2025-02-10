@@ -1,7 +1,18 @@
 import './js/timer.js';
+import './js/phone.js';
+const checkbox = document.getElementById('agreement');
+const svgUse = document.querySelector('.svg-check');
+
+checkbox.addEventListener('change', function () {
+  if (checkbox.checked) {
+    svgUse.style.stroke = 'green';
+  } else {
+    svgUse.style.stroke = 'transparent';
+  }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
-  const registrationForm = document.getElementById('registration-form');
+  const registrationForm = document.querySelector('.registration-form');
   const modalRegistrationForm = document.getElementById(
     'modal-registration-form'
   );
@@ -46,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Send POST request
       fetch('https://example.com/register', {
         method: 'POST',
         headers: {
