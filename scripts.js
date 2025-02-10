@@ -1,3 +1,5 @@
+import './js/timer.js';
+
 document.addEventListener('DOMContentLoaded', function () {
   const registrationForm = document.getElementById('registration-form');
   const modalRegistrationForm = document.getElementById(
@@ -6,41 +8,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const registerButton = document.getElementById('register-button');
   const modal = document.getElementById('modal');
   const closeModal = document.getElementsByClassName('close')[0];
-  const timerElement = document.getElementById('timer');
-  const targetDate = new Date('2025-03-01T00:00:00').getTime();
-
-  // Timer logic
-  setInterval(function () {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    timerElement.innerHTML = `Залишилось: ${days}д ${hours}г ${minutes}хв ${seconds}с`;
-
-    if (distance < 0) {
-      timerElement.innerHTML = 'Час вичерпано!';
-    }
-  }, 1000);
 
   // Show modal on register button click
   registerButton.addEventListener('click', function () {
+    document.body.style.overflow = 'hidden';
     modal.style.display = 'block';
   });
 
   // Close modal
   closeModal.addEventListener('click', function () {
+    document.body.style.overflow = 'unset';
     modal.style.display = 'none';
   });
 
   // Close modal if clicking outside of modal content
   window.addEventListener('click', function (event) {
     if (event.target == modal) {
+      document.body.style.overflow = 'unset';
       modal.style.display = 'none';
     }
   });
