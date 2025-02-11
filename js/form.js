@@ -1,18 +1,8 @@
 const checkbox = document.querySelectorAll('.agreement');
+const checkboxModal = document.querySelector('.agreement-modal');
 const svgUse = document.querySelector('.svg-check');
 const svgUseModal = document.querySelector('.svg-check-modal');
-
-checkbox.forEach((el, i) =>
-  el.addEventListener('change', function () {
-    if (checkbox[i].checked) {
-      svgUse.style.stroke = 'green';
-      svgUseModal.style.stroke = 'green';
-    } else {
-      svgUse.style.stroke = 'transparent';
-      svgUseModal.style.stroke = 'transparent';
-    }
-  })
-);
+const nameInput = document.querySelector('#nameMain');
 
 document.addEventListener('DOMContentLoaded', function () {
   const registrationForm = document.querySelector('.registration-form');
@@ -40,23 +30,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  checkbox.forEach((el, i) =>
+    el.addEventListener('change', function () {
+      if (checkbox[i].checked) {
+        checkboxModal.checked = true;
+        svgUse.style.stroke = 'green';
+        svgUseModal.style.stroke = 'green';
+      } else {
+        checkboxModal.checked = false;
+        svgUse.style.stroke = 'transparent';
+        svgUseModal.style.stroke = 'transparent';
+      }
+    })
+  );
+
   function handleFormSubmission(form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const name = form.querySelector('input[name="name"]').value.trim();
       const email = form.querySelector('input[name="email"]').value.trim();
       const phone = form.querySelector('input[name="phone"]').value.trim();
-      const agreement = form.querySelector('input[type="checkbox"]').checked;
 
       const req = {
         name: name,
         email: email,
         phone: phone,
-        agreement: agreement,
       };
+      console.log(`↓↓↓ Данні з форми ↓↓↓ `);
       console.log(req);
+      console.log(`↑↑↑ Данні з форми ↑↑↑ `);
 
-      if (!name || !email || !phone || !agreement) {
+      if (!name || !email || !phone) {
         alert(
           'Будь ласка, заповніть всі поля та погодьтеся з Політикою конфіденційності та Умовами користування.'
         );

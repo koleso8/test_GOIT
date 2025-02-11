@@ -51,6 +51,8 @@
                   name="name"
                   placeholder="Введи своє ім`я"
                   required
+                  minlength="2"
+                  maxlength="20"
                 />
                 <input
                   class="input"
@@ -67,6 +69,11 @@
                     id="phone"
                     name="phone"
                     required
+                    pattern="\+?\d{10,15}"
+                    title="Має починатися з '+' та  від 10 до 15 символів"
+                    minlength="10"
+                    maxlength="15"
+                    placeholder="+380-000-0000000"
                   />
                 </div>
                 <div class="privaci-box">
@@ -143,10 +150,15 @@
             id="phoneMobile"
             name="phone"
             required
+            pattern="\+?\d{10,15}"
+            title="Має починатися з '+' та  від 10 до 15 символів"
+            minlength="10"
+            maxlength="15"
+            placeholder="+380-000-0000000"
           />
           <div class="privaci-box">
             <input
-              class="input-check visually-hidden agreement"
+              class="input-check visually-hidden agreement agreement-modal"
               type="checkbox"
               id="agreement"
               name="agreement"
@@ -171,6 +183,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+
     <script type="module" src="scripts.js"></script>
   </body>
 </html>

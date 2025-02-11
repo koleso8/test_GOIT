@@ -114,8 +114,12 @@
   }
 }
 
-.input::spelling-error {
+.input:invalid {
   outline: 1px solid red;
+}
+.input:valid {
+  outline: 1px solid var(--green);
+  box-shadow: 0 0 5px #46ff43a4;
 }
 .privacy {
   position: relative;
