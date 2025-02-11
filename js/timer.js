@@ -44,6 +44,24 @@ setInterval(function () {
   );
 
   if (distance < 0) {
-    timerElement.innerHTML = 'Час вичерпано!';
+    timerElement.innerHTML = `<div class="date-col">
+                <p class="date-time">00</p>
+                <p class="date-descr">днів</p>
+              </div>
+              <div class="dott">:</div>
+              <div class="date-col">
+              <p class="date-time">00</p>
+              <p class="date-descr">годин</p>
+              </div>
+              <div class="dott">:</div>
+              <div class="date-col">
+              <p class="date-time">$00</p>
+              <p class="date-descr">хвилин</p>
+              </div>
+              <div class="dott">:</div>
+              <div class="date-col">
+                <p class="date-time" " id="last-time">00</p>
+                <p class="date-descr">секунд</p>
+              </div>`;
   }
 }, 1000);
