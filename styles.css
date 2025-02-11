@@ -13,8 +13,14 @@
   --text: #010101;
 }
 
+.privaci-box {
+  position: relative;
+}
+
 .visually-hidden {
   position: absolute;
+  top: 50%;
+  left: 3%;
   width: 1px;
   height: 1px;
   margin: -1px;

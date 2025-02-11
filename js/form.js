@@ -1,16 +1,18 @@
-const checkbox = document.getElementById('agreement');
+const checkbox = document.querySelectorAll('.agreement');
 const svgUse = document.querySelector('.svg-check');
 const svgUseModal = document.querySelector('.svg-check-modal');
 
-checkbox.addEventListener('change', function () {
-  if (checkbox.checked) {
-    svgUse.style.stroke = 'green';
-    svgUseModal.style.stroke = 'green';
-  } else {
-    svgUse.style.stroke = 'transparent';
-    svgUseModal.style.stroke = 'transparent';
-  }
-});
+checkbox.forEach((el, i) =>
+  el.addEventListener('change', function () {
+    if (checkbox[i].checked) {
+      svgUse.style.stroke = 'green';
+      svgUseModal.style.stroke = 'green';
+    } else {
+      svgUse.style.stroke = 'transparent';
+      svgUseModal.style.stroke = 'transparent';
+    }
+  })
+);
 
 document.addEventListener('DOMContentLoaded', function () {
   const registrationForm = document.querySelector('.registration-form');
@@ -21,19 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('modal');
   const closeModal = document.getElementsByClassName('close')[0];
 
-  // Show modal on register button click
   registerButton.addEventListener('click', function () {
     document.body.style.overflow = 'hidden';
     modal.style.display = 'block';
   });
 
-  // Close modal
   closeModal.addEventListener('click', function () {
     document.body.style.overflow = 'unset';
     modal.style.display = 'none';
   });
 
-  // Close modal if clicking outside of modal content
   window.addEventListener('click', function (event) {
     if (event.target == modal) {
       document.body.style.overflow = 'unset';
@@ -41,11 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Form submission logic
   function handleFormSubmission(form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      // Validate form
       const name = form.querySelector('input[name="name"]').value.trim();
       const email = form.querySelector('input[name="email"]').value.trim();
       const phone = form.querySelector('input[name="phone"]').value.trim();
