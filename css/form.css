@@ -114,7 +114,7 @@
   }
 }
 
-.input:invalid {
+.input:focus:invalid {
   outline: 1px solid red;
 }
 .input:valid {

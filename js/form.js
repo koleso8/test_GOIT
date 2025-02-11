@@ -43,6 +43,33 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   );
+  function saveToLocalStorage(form) {
+    const saveToLocalStorageItem = (key, value) => {
+      localStorage.setItem(key, value);
+    };
+
+    form.addEventListener('input', function (event) {
+      event.preventDefault();
+      const name = form.querySelector('input[name="name"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const phone = form.querySelector('input[name="phone"]').value.trim();
+      saveToLocalStorageItem('name', name);
+      saveToLocalStorageItem('email', email);
+      saveToLocalStorageItem('tel', phone);
+    });
+  }
+  function loadFromLocalStorage(form) {
+    const loadFromLocalStorageItem = key => {
+      return localStorage.getItem(key);
+    };
+
+    form.querySelector('input[name="name"]').value =
+      loadFromLocalStorageItem('name');
+    form.querySelector('input[name="email"]').value =
+      loadFromLocalStorageItem('email');
+    form.querySelector('input[name="phone"]').value =
+      loadFromLocalStorageItem('tel');
+  }
 
   function handleFormSubmission(form) {
     form.addEventListener('submit', function (event) {
@@ -86,6 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  loadFromLocalStorage(registrationForm);
+  loadFromLocalStorage(modalRegistrationForm);
+  saveToLocalStorage(registrationForm);
+  saveToLocalStorage(modalRegistrationForm);
   handleFormSubmission(registrationForm);
   handleFormSubmission(modalRegistrationForm);
 });
